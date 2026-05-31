@@ -4,6 +4,7 @@
   "description": "Pi extension that shows the current GitHub pull request in the footer.",
   "keywords": ["pi-package", "pi", "pi-extension", "github", "pull-request", "pr", "indicator"],
   "license": "MIT",
+  "author": "Jim Kring",
   "type": "module",
   "files": ["index.ts", "assets", "README.md", "LICENSE"],
   "repository": {
