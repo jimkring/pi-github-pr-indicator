@@ -20,6 +20,8 @@ Install directly from GitHub:
 pi install git:github.com/jimkring/pi-github-pr-indicator
 ```
 
+Use `pi update --extensions` to keep it up to date.
+
 For local development (clone this repository):
 
 ```bash
