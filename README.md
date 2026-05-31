@@ -12,7 +12,6 @@ Here's what it looks like / see the **`PR #1 (Update terminal screenshot)`** tex
 
 ![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.png)
 
-
 ## Install
 
 Install directly from GitHub:
@@ -46,8 +45,17 @@ pi -e .
 
 ```bash
 npm install
-npm run check
-npm run pack:dry-run
+npm run verify
+```
+
+Common local tasks are also available through `just`:
+
+```bash
+just fmt
+just lint
+just check
+just test
+just verify
 ```
 
 ## License
