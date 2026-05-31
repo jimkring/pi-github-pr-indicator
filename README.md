@@ -14,12 +14,6 @@ Install directly from GitHub:
 pi install git:github.com/jimkring/pi-github-pr-indicator
 ```
 
-After npm publication, this package can also be installed with:
-
-```bash
-pi install npm:@jimkring/pi-github-pr-indicator
-```
-
 For local development from this repository:
 
 ```bash
