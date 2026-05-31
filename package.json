@@ -2,14 +2,32 @@
   "name": "@jimkring/pi-github-pr-indicator",
   "version": "0.1.0",
   "description": "Pi extension that shows the current GitHub pull request in the footer.",
-  "keywords": ["pi-package", "pi", "pi-extension", "github", "pull-request", "pr", "indicator"],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-extension",
+    "github",
+    "pull-request",
+    "pr",
+    "indicator"
+  ],
   "license": "MIT",
   "author": "Jim Kring",
   "type": "module",
-  "files": ["index.ts", "assets", "README.md", "CHANGELOG.md", "LICENSE"],
+  "files": [
+    "index.ts",
+    "assets",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "fmt": "prettier --write .",
+    "lint": "prettier --check .",
     "check": "tsc --noEmit",
-    "pack:dry-run": "npm pack --dry-run"
+    "test": "node --test",
+    "pack:dry-run": "npm pack --dry-run",
+    "verify": "npm run lint && npm run check && npm test && npm run pack:dry-run"
   },
   "repository": {
     "type": "git",
@@ -29,10 +47,13 @@
   "devDependencies": {
     "@earendil-works/pi-coding-agent": "^0.78.0",
     "@types/node": "^24.10.1",
+    "prettier": "^3.8.3",
     "typebox": "^1.0.60",
     "typescript": "^5.9.3"
   },
   "pi": {
-    "extensions": ["./index.ts"]
+    "extensions": [
+      "./index.ts"
+    ]
   }
 }

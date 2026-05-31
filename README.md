@@ -1,8 +1,16 @@
 # `@jimkring/pi-github-pr-indicator`
 
-Pi extension that shows the current GitHub pull request in the Pi footer.
+[Pi coding assistant](pi.dev) extension that shows the current GitHub pull request in the Pi footer.
 
-![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.svg)
+This helps you:
+
+- Know if you're working in a PR branch.
+- Know the PR number.
+- Know the PR title.
+
+Here's what it looks like / see the **`PR #1 (Update terminal screenshot)`** text in the lower-left footer:
+
+![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.png)
 
 ## Install
 
@@ -12,13 +20,9 @@ Install directly from GitHub:
 pi install git:github.com/jimkring/pi-github-pr-indicator
 ```
 
-After npm publication, this package can also be installed with:
+Use `pi update --extensions` to keep it up to date.
 
-```bash
-pi install npm:@jimkring/pi-github-pr-indicator
-```
-
-For local development from this repository:
+For local development (clone this repository):
 
 ```bash
 pi -e .
@@ -43,8 +47,17 @@ pi -e .
 
 ```bash
 npm install
-npm run check
-npm run pack:dry-run
+npm run verify
+```
+
+Common local tasks are also available through `just`:
+
+```bash
+just fmt
+just lint
+just check
+just test
+just verify
 ```
 
 ## License

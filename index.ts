@@ -35,11 +35,7 @@ const ANSI_ESCAPE_PATTERN = /\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])/g;
 const CONTROL_CHARACTER_PATTERN = /[\u0000-\u001F\u007F-\u009F]/g;
 
 function cleanSingleLine(text: string): string {
-	return text
-		.replace(ANSI_ESCAPE_PATTERN, "")
-		.replace(CONTROL_CHARACTER_PATTERN, " ")
-		.replace(/\s+/g, " ")
-		.trim();
+	return text.replace(ANSI_ESCAPE_PATTERN, "").replace(CONTROL_CHARACTER_PATTERN, " ").replace(/\s+/g, " ").trim();
 }
 
 function truncateText(text: string, maxChars: number): string {
@@ -63,15 +59,27 @@ function classifyGhFailure(result: ExecResult): SetupProblem | "none" | "other" 
 		return "missing-gh";
 	}
 
-	if (/gh auth login|not logged in|not authenticated|authentication required|requires authentication|http 401|bad credentials/.test(output)) {
+	if (
+		/gh auth login|not logged in|not authenticated|authentication required|requires authentication|http 401|bad credentials/.test(
+			output,
+		)
+	) {
 		return "unauthenticated-gh";
 	}
 
-	if (/no pull requests? found|could not find any pull requests?|there is no pull request|no open pull requests?/.test(output)) {
+	if (
+		/no pull requests? found|could not find any pull requests?|there is no pull request|no open pull requests?/.test(
+			output,
+		)
+	) {
 		return "none";
 	}
 
-	if (/none of the git remotes.*github|not a github repository|could not determine.*repo|run: gh repo set-default|no git remotes/.test(output)) {
+	if (
+		/none of the git remotes.*github|not a github repository|could not determine.*repo|run: gh repo set-default|no git remotes/.test(
+			output,
+		)
+	) {
 		return "none";
 	}
 
@@ -92,6 +100,14 @@ function parsePrInfo(raw: string): PrInfo | null {
 		return null;
 	}
 }
+
+export const __testing = {
+	cleanSingleLine,
+	truncateText,
+	formatTitle,
+	classifyGhFailure,
+	parsePrInfo,
+};
 
 export default function (pi: ExtensionAPI) {
 	let gitHeadWatcher: ReturnType<typeof watch> | null = null;
@@ -150,7 +166,10 @@ export default function (pi: ExtensionAPI) {
 		notifiedSetupProblems.add(problem);
 
 		if (problem === "missing-gh") {
-			ctx.ui.notify("GitHub PR Indicator: GitHub CLI (`gh`) was not found. Install `gh` and run `gh auth login`.", "warning");
+			ctx.ui.notify(
+				"GitHub PR Indicator: GitHub CLI (`gh`) was not found. Install `gh` and run `gh auth login`.",
+				"warning",
+			);
 			return;
 		}
 
