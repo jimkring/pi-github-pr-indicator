@@ -1,16 +1,17 @@
 # `@jimkring/pi-github-pr-indicator`
 
-Pi extension that shows the current GitHub pull request in the Pi footer.
+[Pi coding assistant](pi.dev) extension that shows the current GitHub pull request in the Pi footer.
 
-![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.png)
-
-The `PR #1 (Update terminal screenshot)` text in the lower-left footer is the indicator added by this extension. It updates to show the open GitHub PR for the current branch.
-
-## Why use this extension?
+This helps you:
 
 - Know if you're working in a PR branch.
 - Know the PR number.
 - Know the PR title.
+
+Here's what it looks like / see the **`PR #1 (Update terminal screenshot)`** text in the lower-left footer:
+
+![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.png)
+
 
 ## Install
 
@@ -20,7 +21,7 @@ Install directly from GitHub:
 pi install git:github.com/jimkring/pi-github-pr-indicator
 ```
 
-For local development from this repository:
+For local development (clone this repository):
 
 ```bash
 pi -e .
