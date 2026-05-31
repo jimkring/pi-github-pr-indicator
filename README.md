@@ -2,7 +2,7 @@
 
 Pi extension that shows the current GitHub pull request in the Pi footer.
 
-![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.svg)
+![Screenshot of the GitHub PR indicator extension showing a PR in the Pi terminal footer](assets/github-pr-indicator-terminal.png)
 
 ## Install
 
