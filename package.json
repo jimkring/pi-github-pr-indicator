@@ -6,22 +6,31 @@
   "license": "MIT",
   "author": "Jim Kring",
   "type": "module",
-  "files": ["index.ts", "assets", "README.md", "LICENSE"],
+  "files": ["index.ts", "assets", "README.md", "CHANGELOG.md", "LICENSE"],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "pack:dry-run": "npm pack --dry-run"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jimkring/pi-extensions.git",
-    "directory": "packages/github-pr-indicator"
+    "url": "git+https://github.com/jimkring/pi-github-pr-indicator.git"
   },
   "bugs": {
-    "url": "https://github.com/jimkring/pi-extensions/issues"
+    "url": "https://github.com/jimkring/pi-github-pr-indicator/issues"
   },
-  "homepage": "https://github.com/jimkring/pi-extensions/tree/main/packages/github-pr-indicator#readme",
+  "homepage": "https://github.com/jimkring/pi-github-pr-indicator#readme",
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*",
     "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.78.0",
+    "@types/node": "^24.10.1",
+    "typebox": "^1.0.60",
+    "typescript": "^5.9.3"
   },
   "pi": {
     "extensions": ["./index.ts"]
